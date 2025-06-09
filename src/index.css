@@ -4,7 +4,12 @@
     box-sizing: border-box;
 }
 
+/* Scrolling */
 
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
 
 body {
     background: linear-gradient(to bottom, #12071f, #2f204e );
@@ -27,13 +32,34 @@ a {
     padding-right: 16px;
     margin-left: auto;
     margin-right: auto;
-    background-color: blue ;
 
 }
 
 section {
     height: 100vh;
+    scroll-snap-align: center;
 }
+
+
+/* backgroundds of each section */
+
+section:nth-child(1) {
+background-color: black;
+}
+
+section:nth-child(2) {
+background-color: red;
+}
+
+section:nth-child(3) {
+background-color: green;
+}
+
+section:nth-child(4) {
+background-color: purple;
+}
+
+
 
 
 
