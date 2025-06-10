@@ -31,15 +31,25 @@
 }
 
 .awards {
-    width: 30%;
+  width: 100%;
+  max-width: 500px;
 }
 
-.awards p {
-    font-size: 14px;
-    color: #ddd;
-    margin: 16px 0px;
-
+.awardsTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #F0B346; /* your highlight color */
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
+
+.awardsText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 24px;
+}
+
 
 
 .awardList {
@@ -79,9 +89,10 @@
   background-color: #161014;
   border-bottom-right-radius: 10px;
 }
-.folow img {
+.follow img {
     width: 20px;
     height: 20px;
+    margin-bottom: 8px;
 }
 
 .followTextContainer {
@@ -101,4 +112,34 @@
   display: flex;
   align-items: center;
   border-bottom-right-radius: 10px;
+}
+
+
+.bubbleContainer {
+
+}
+
+.bubble{
+
+}
+
+.bubble img {
+
+}
+
+.certificate {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 600;
+    color: #C4D2E3;
+}
+
+.certificate img {
+    width: 170px;    
+    height: 120px;
 }

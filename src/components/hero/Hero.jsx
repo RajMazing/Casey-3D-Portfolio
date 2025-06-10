@@ -16,13 +16,10 @@ const Hero = () => {
         </h1>
         {/* AWARDS */}
         <div className="awards">
-          <h2>Top Rated Designer</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint
-            incidunt neque eaque ab ea provident error natus, at aperiam ipsam
-            iste perspiciatis eum itaque delectus suscipit fugiat. Sint,
-            deleniti hic?
-          </p>
+  <h2 className="awardsTitle">Creative at Heart, Precise in Practice</h2>
+  <p className="awardsText">
+    A developer on a mission to bring your ideas to life. Whether it's a web app, portfolio, or custom tool, I craft clean, modern solutions that help you stand out. Let’s turn your vision into something real.
+  </p>
           <div className="awardList">
             <img src="/award1.png" alt="Award 1" />
             <img src="/award2.png" alt="Award 2" />
@@ -54,17 +51,20 @@ const Hero = () => {
         {/* BUBBLE */}
         <Speech />
         {/* CERTIFICATE */}
-        <img
-          src="/RajSealFinal-removebg-preview.png"
-          alt="Certificate"
-          className="w-80 h-80 object-contain"
-        />
-        Developer
-        <br />
-        Testing
-        <br />
-        Deployment
+        <div className="certificate">
+          <img
+            src="/RajSealFinal-removebg-preview.png"
+            alt="Certificate"
+            // className="w-80 h-80 object-contain"
+          />
+          Developer
+          <br />
+          Testing
+          <br />
+          Deployment
+        </div>
       </div>
+
       {/* CONTACT BUTTON  */}
       <a href="/#contact" className="contactLink">
         <div className="contactButton">
@@ -88,20 +88,20 @@ const Hero = () => {
               </textPath>
             </text>
           </svg>
-           <div className="arrow">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="50"
-                height="50"
-                fill="none"
-                stroke="black"
-                strokeWidth="2"
-              >
-                <line x1="6" y1="18" x2="18" y2="6" />
-                <polyline points="9 6 18 6 18 15" />
-              </svg>
-            </div>
+          <div className="arrow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="50"
+              height="50"
+              fill="none"
+              stroke="black"
+              strokeWidth="2"
+            >
+              <line x1="6" y1="18" x2="18" y2="6" />
+              <polyline points="9 6 18 6 18 15" />
+            </svg>
+          </div>
         </div>
       </a>
     </div>
