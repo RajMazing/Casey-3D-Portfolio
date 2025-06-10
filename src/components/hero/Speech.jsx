@@ -1,9 +1,9 @@
 const Speech = () => {
   return (
-    <div className='bubbkleContainer'>
-        <div className="bubble">
-            <img src="/man.png" alt="" />
-        </div>
+    <div className='bubbleContainer'>
+        <div className="bubble">text</div>
+            <img src="/BlackMan.jpeg" alt="" />
+        
     </div>
   )
 }
