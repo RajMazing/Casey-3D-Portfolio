@@ -147,10 +147,11 @@
 }
 
 .contactLink {
-  margin-bottom: 50px;
+   margin-bottom: 50px;
 }
 .contactButton {
-  position: relative;
+ position: relative;
+ margin-top: 800px;
 }
 
 .circleText {
