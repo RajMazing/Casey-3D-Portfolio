@@ -10,7 +10,7 @@ const Hero = () => {
         {/* TITLE */}
         <h1 className="hTitle">
           {" "}
-          Hey there,
+          Hey There,
           <br />
           <span>I'm Casey!</span>
         </h1>
@@ -30,7 +30,7 @@ const Hero = () => {
           </div>
         </div>
         {/* SCROLL SVG */}
-        <a href="#services">
+        <a href="#services" className="scroll">
           <img
             src={rajLogo}
             alt="Scroll Icon"
@@ -47,6 +47,9 @@ const Hero = () => {
             <img src="/youtube.png" alt="youtube" />
             <img src="/facebook.png" alt="facebook" />
           </a>
+          <div className="followTextContainer">
+            <div className="followText"> FOLLOW ME</div>
+          </div>
         </div>
         {/* BUBBLE */}
         <Speech />
@@ -73,7 +76,32 @@ const Hero = () => {
               fill="none"
               d="M 100, 100 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0"
             />
+
+            <text className="circleText">
+              <textPath href="#innerCirclePath"> ● Hire Me ● </textPath>
+            </text>
+
+            <text className="circleText">
+              <textPath href="#innerCirclePath" startOffset="44%">
+                {" "}
+                ● Contact Me ●{" "}
+              </textPath>
+            </text>
           </svg>
+           <div className="arrow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="50"
+                height="50"
+                fill="none"
+                stroke="black"
+                strokeWidth="2"
+              >
+                <line x1="6" y1="18" x2="18" y2="6" />
+                <polyline points="9 6 18 6 18 15" />
+              </svg>
+            </div>
         </div>
       </a>
     </div>
