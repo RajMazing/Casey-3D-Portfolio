@@ -63,7 +63,7 @@ const Hero = () => {
           <br />
           Deployment
         </div>
-      </div>
+      
 
       {/* CONTACT BUTTON  */}
       <a href="/#contact" className="contactLink">
@@ -104,7 +104,12 @@ const Hero = () => {
           </div>
         </div>
       </a>
+  <div className="bg">
+      
     </div>
+    </div>
+  </div>
+
   );
 };
 

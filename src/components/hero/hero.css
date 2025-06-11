@@ -13,6 +13,9 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.hSection.left {
+  position: relative;
+}
 
 .hTitle {
   margin-top: 50px;
@@ -149,10 +152,13 @@
 .contactLink {
    margin-bottom: 50px;
 }
+
+
 .contactButton {
- position: relative;
- margin-top: 800px;
+  position: relative;
+  
 }
+
 
 .circleText {
   letter-spacing: 6px;
