@@ -1,36 +1,68 @@
 import "./hero.css";
 import Speech from "./Speech";
-
 import rajLogo from "/Rajmazing-r-logo.svg";
-
 import { motion } from "motion/react"
+
+const awardVariants = {
+  initial : {
+    x: -100,
+    opacity: 0,
+  },
+animate: {
+  x: 0, 
+  opacity:1,
+  transition: {
+    duration: 1,
+    staggerChildren: 0.2
+  }
+}
+
+}
 
 const Hero = () => {
   return (
     <div className="hero">
       <div className="hSection left">
         {/* TITLE */}
-        <h1 className="hTitle">
+        <motion.h1  
+        initial={{ y: -100, opacity: 0 }} 
+        animate={{ y: 0, opacity: 1}}
+        transition={{duration: 1}}
+        className="hTitle"
+
+        >
           {" "}
           Hey There,
           <br />
           <span>I'm Casey!</span>
-        </h1>
+        </motion.h1>
+
         {/* AWARDS */}
-        <div className="awards">
-  <h2 className="awardsTitle">Creative at Heart, Precise in Practice</h2>
-  <p className="awardsText">
+        <motion.div variants={awardVariants}
+        initial="initial"
+        animate="animate"
+        className="awards">
+  <motion.h2 className="awardsTitle">Creative at Heart, Precise in Practice</motion.h2>
+  <motion.p className="awardsText">
     A developer on a mission to bring your ideas to life. Whether it's a web app, portfolio, or custom tool, I craft clean, modern solutions that help you stand out. Let’s turn your vision into something real.
-  </p>
-          <div className="awardList">
-            <img src="/award1.png" alt="Award 1" />
-            <img src="/award2.png" alt="Award 2" />
-            <img src="/award3.png" alt="Award 3" />
-          </div>
-        </div>
+  </motion.p>
+          <motion.div variants={awardVariants} className="awardList">
+            <motion.img variants={awardVariants}  src="/award1.png" alt="Award 1" />
+            <motion.img variants={awardVariants}  src="/award2.png" alt="Award 2" />
+            <motion.img variants={awardVariants} src="/award3.png" alt="Award 3" />
+          </motion.div>
+        </motion.div>
         {/* SCROLL SVG */}
-        <a href="#services" className="scroll">
-          <img
+        <a 
+         href="#services" 
+         className="scroll">
+          <motion.img
+          animate={{ y: [0, 20, 0], opacity: [0, 1, 0] }}
+          transition={{
+            repeat: Infinity,
+            duration: 4,
+            ease: "easeInOut"
+          }}
             src={rajLogo}
             alt="Scroll Icon"
             style={{ width: "64px", height: "64px" }}
@@ -109,7 +141,7 @@ const Hero = () => {
       </div>
   <div className="bg">
     <div className="hImg">
- <img src="/rajmazin5.png" alt=""  />
+ <img src="/Promo-Website-Website_portrait_content-removebg-preview.png" alt=""  />
     </div>
     </div>
   </div>

@@ -25,7 +25,7 @@ const App = () => {
         <Contact />
       </section>
 
-      <Test />
+      {/* <Test /> */}
     </div>
   );
 };

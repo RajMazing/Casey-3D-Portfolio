@@ -35,9 +35,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
- border-radius: 16px; /* You can adjust: try 12px–24px for soft edges */
 
-opacity: 0.3;
+
+opacity: 0.8;
 }
 
 
