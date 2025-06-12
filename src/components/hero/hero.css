@@ -6,6 +6,43 @@
   display: flex;
 }
 
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+}
+
+.hImg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 80%;
+    width: max-content;
+    pointer-events: none;
+    z-index: 1;
+
+    
+}
+
+.hImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+ border-radius: 16px; /* You can adjust: try 12px–24px for soft edges */
+
+opacity: 0.3;
+}
+
+
+
+
 .hSection {
   width: 50%;
   height: 100%;
@@ -20,7 +57,7 @@
 .hTitle {
   margin-top: 50px;
   font-size: 100px;
-  color: white;
+  color: #C4D2E3;
 }
 
 .hTitle span {
@@ -42,8 +79,9 @@
 
 .awardsText {
   font-size: 16px;
+  font-weight: 900;
   line-height: 1.6;
-  color: #ddd;
+  color: #C4D2E3;
   margin-bottom: 24px;
 }
 
@@ -141,7 +179,7 @@
   text-align: center;
   line-height: 24px;
   font-weight: 600;
-  color: #c4d2e3;
+  color: #DFAE4A;
 }
 
 .certificate img {
