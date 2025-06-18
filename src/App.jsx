@@ -2,7 +2,7 @@ import Hero from "./components/hero/Hero";
 import Services from "./components/services/Services";
 import Portfolio from "./components/portfolio/Portfolio";
 import Contact from "./components/contact/Contact";
-import Test from "./components/Test"
+
 
 
 
@@ -24,8 +24,10 @@ const App = () => {
         {" "}
         <Contact />
       </section>
+      
+      {/* <Test3d />
 
-      {/* <Test /> */}
+      <Test /> */}
     </div>
   );
 };

@@ -1,91 +1,202 @@
 import "./hero.css";
+import Shape from "./Shape";
 import Speech from "./Speech";
 import rajLogo from "/Rajmazing-r-logo.svg";
-import { motion } from "motion/react"
+
+import { motion } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
 
 const awardVariants = {
-  initial : {
+  initial: {
     x: -100,
     opacity: 0,
   },
-animate: {
-  x: 0, 
-  opacity:1,
-  transition: {
-    duration: 1,
-    staggerChildren: 0.2
-  }
-}
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2,
+    },
+  },
+};
 
-}
+const followVariants = {
+  initial: {
+    y: -100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 const Hero = () => {
   return (
     <div className="hero">
       <div className="hSection left">
         {/* TITLE */}
-        <motion.h1  
-        initial={{ y: -100, opacity: 0 }} 
-        animate={{ y: 0, opacity: 1}}
-        transition={{duration: 1}}
-        className="hTitle"
+ {/* TITLE */}
+{/* TITLE */}
+<motion.h1
+  initial={{ y: -100, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 1 }}
+  className="hTitle"
+>
+  {/* LINE 1 */}
+  <motion.span
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.1 }}
+    className="block text-[0.8em] tracking-widest uppercase leading-tight mb-2 font-medium text-[#E8CD86]"
+  >
+    Hey there,
+  </motion.span>
 
-        >
-          {" "}
-          Hey There,
-          <br />
-          <span>I'm Casey!</span>
-        </motion.h1>
+  {/* LINE 2 */}
+  <motion.span
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.25 }}
+    className="block text-[1.4em] leading-[1.1] tracking-tight font-black uppercase"
+    style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif' }}
+  >
+    <span style={{ color: '#F0B346' }}>I’m</span>{' '}
+    <span
+      style={{
+        color: '#E3EAF2',
+        textShadow: '1px 1px 3px rgba(240, 179, 70, 0.3)',
+        fontWeight: 900,
+      }}
+    >
+      Casey
+    </span>
+  </motion.span>
+
+  {/* LINE 3 */}
+  <motion.span
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.4 }}
+    className="block text-[0.5em] tracking-[0.4em] mt-4 font-semibold uppercase"
+    style={{ fontFamily: 'ui-sans-serif, system-ui, sans-serif' }}
+  >
+    <span style={{ color: '#E8CD86' }}>Developer</span>{' '}
+    <span style={{ color: '#F0B346' }}>•</span>{' '}
+    <span
+      style={{
+        color: '#E3EAF2',
+        letterSpacing: '0.5em',
+        fontWeight: 700,
+      }}
+    >
+      Designer
+    </span>
+  </motion.span>
+</motion.h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         {/* AWARDS */}
-        <motion.div variants={awardVariants}
-        initial="initial"
-        animate="animate"
-        className="awards">
-  <motion.h2 className="awardsTitle">Creative at Heart, Precise in Practice</motion.h2>
-  <motion.p className="awardsText">
-    A developer on a mission to bring your ideas to life. Whether it's a web app, portfolio, or custom tool, I craft clean, modern solutions that help you stand out. Let’s turn your vision into something real.
-  </motion.p>
+        <motion.div
+          variants={awardVariants}
+          initial="initial"
+          animate="animate"
+          className="awards"
+        >
+          <motion.h2 className="awardsTitle">
+            Creative at Heart, Precise in Practice
+          </motion.h2>
+          <motion.p className="awardsText">
+            A developer on a mission to bring your ideas to life. Whether it's a
+            web app, portfolio, or custom tool, I craft clean, modern solutions
+            that help you stand out. Let’s turn your vision into something real.
+          </motion.p>
           <motion.div variants={awardVariants} className="awardList">
-            <motion.img variants={awardVariants}  src="/award1.png" alt="Award 1" />
-            <motion.img variants={awardVariants}  src="/award2.png" alt="Award 2" />
-            <motion.img variants={awardVariants} src="/award3.png" alt="Award 3" />
+            <motion.img
+              variants={awardVariants}
+              src="/award1.png"
+              alt="Award 1"
+            />
+            <motion.img
+              variants={awardVariants}
+              src="/award2.png"
+              alt="Award 2"
+            />
+            <motion.img
+              variants={awardVariants}
+              src="/award3.png"
+              alt="Award 3"
+            />
           </motion.div>
         </motion.div>
         {/* SCROLL SVG */}
-        <a 
-         href="#services" 
-         className="scroll">
+        <a href="#services" className="scroll">
           <motion.img
-          animate={{ y: [0, 20, 0], opacity: [0, 1, 0] }}
-          transition={{
-            repeat: Infinity,
-            duration: 4,
-            ease: "easeInOut"
-          }}
+            animate={{ y: [0, 20, 0], opacity: [0, 1, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 4,
+              ease: "easeInOut",
+            }}
             src={rajLogo}
             alt="Scroll Icon"
             style={{ width: "64px", height: "64px" }}
           />
         </a>
-        
       </div>
       <div className="hSection right">
         {/* FOLLOW */}
-        <div className="follow">
-          <a href="/">
+        <motion.div
+          variants={followVariants}
+          initial="initial"
+          animate="animate"
+          className="follow"
+        >
+          <motion.a variants={followVariants} href="/">
             <img src="/instagram.png" alt="instagram" />
+          </motion.a>
+          <motion.a variants={followVariants} href="/">
             <img src="/youtube.png" alt="youtube" />
+          </motion.a>
+
+          <motion.a variants={followVariants} href="/">
             <img src="/facebook.png" alt="facebook" />
-          </a>
-          <div className="followTextContainer">
+          </motion.a>
+
+          <motion.div className="followTextContainer">
             <div className="followText"> FOLLOW ME</div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         {/* BUBBLE */}
         <Speech />
         {/* CERTIFICATE */}
-        <div className="certificate">
+        <motion.div
+          animate={{ opacity: [0, 1] }}
+          transition={{ duration: 1 }}
+          className="certificate"
+        >
           <img
             src="/RajSealFinal-removebg-preview.png"
             alt="Certificate"
@@ -96,58 +207,84 @@ const Hero = () => {
           Testing
           <br />
           Deployment
-        </div>
-      
+        </motion.div>
 
-      {/* CONTACT BUTTON  */}
-      <a href="/#contact" className="contactLink">
-        <div className="contactButton">
-          <svg viewBox="0 0 200 200" width="150" height="150">
-            <circle cx="100" cy="100" r="90" fill="#F0B346" />
+        {/* CONTACT BUTTON  */}
+        <motion.a href="/#contact" className="contactLink" animate={{
+          x:[200, 0],
+          opacity: [0,1]
+        }}
+        transition = {{
+          duration: 2
+        }}
+        
+        >
+          <motion.div 
+          animate={{ rotate: [0,360] }} 
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="contactButton">
+            <svg viewBox="0 0 200 200" width="150" height="150">
+              <circle cx="100" cy="100" r="90" fill="#F0B346" />
 
-            <path
-              id="innerCirclePath"
-              fill="none"
-              d="M 100, 100 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0"
-            />
+              <path
+                id="innerCirclePath"
+                fill="none"
+                d="M 100, 100 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0"
+              />
 
-            <text className="circleText">
-              <textPath href="#innerCirclePath"startOffset="-1%" > ● Hire Me ● </textPath>
-            </text>
+              <text className="circleText">
+                <textPath href="#innerCirclePath" startOffset="-1%">
+                  {" "}
+                  ● Hire Me ●{" "}
+                </textPath>
+              </text>
 
-            <text className="circleText">
-              <textPath href="#innerCirclePath" startOffset="51%">
-                {" "}
-                 Contact Me {" "}
-              </textPath>
-            </text>
-          </svg>
-          <div className="arrow">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="50"
-              height="50"
-              fill="none"
-              stroke="black"
-              strokeWidth="2"
-            >
-              <line x1="6" y1="18" x2="18" y2="6" />
-              <polyline points="9 6 18 6 18 15" />
+              <text className="circleText">
+                <textPath href="#innerCirclePath" startOffset="51%">
+                  {" "}
+                  Contact Me{" "}
+                </textPath>
+              </text>
             </svg>
-          </div>
-        </div>
-      </a>
+            <div className="arrow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="50"
+                height="50"
+                fill="none"
+                stroke="black"
+                strokeWidth="2"
+              >
+                <line x1="6" y1="18" x2="18" y2="6" />
+                <polyline points="9 6 18 6 18 15" />
+              </svg>
+            </div>
+          </motion.div>
+        </motion.a>
       </div>
-  <div className="bg">
-    <div className="hImg">
- <img src="/Promo-Website-Website_portrait_content-removebg-preview.png" alt=""  />
+      <div className="bg">
+        {/* 3d imgs  */}
+        <Canvas>
+          <Suspense fallback="loading">
+            <Shape />
+          </Suspense>
+          
+        </Canvas>
+        <div className="hImg">
+          <img
+            src="/IMG_2269-removebg-preview (1).png"
+            // src="/IMG_2269-removebg-preview (1).png"
+            alt=""
+          />
+        </div>
+      </div>
     </div>
-    </div>
-  </div>
-
   );
 };
 
 export default Hero;
-

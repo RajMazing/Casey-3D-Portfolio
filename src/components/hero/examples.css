@@ -1,0 +1,60 @@
+/* floating/soft glow example*/
+
+.hImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 0 25px rgba(240, 179, 70, 0.3));
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+.hImg img {
+  display: block;
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  opacity: 1;
+  background: transparent;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+/* Medium screens */
+@media (min-width: 768px) {
+  .hImg img {
+    width: 240px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .hImg img {
+    width: 300px;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1280px) {
+  .hImg img {
+    width: 360px;
+  }
+}
+
+/* Floating animation */
+@keyframes floatImage {
+  0%, 100% {
+    transform: translate(-50%, -52%);
+  }
+  50% {
+    transform: translate(-50%, -48%);
+  }
+}

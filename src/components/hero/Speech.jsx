@@ -1,8 +1,16 @@
+import { motion } from "motion/react";
 import { TypeAnimation } from "react-type-animation";
+
+
 
 const Speech = () => {
   return (
-    <div className="bubbleContainer">
+    <motion.div 
+    className="bubbleContainer"
+    animate={{opacity:[0,1]}}
+    transition={{duration: 1}}
+    
+    >
       <div className="bubble">
         <TypeAnimation
           sequence={[
@@ -21,7 +29,7 @@ const Speech = () => {
         />
       </div>
       <img src="/BlackMan.jpeg" alt="" />
-    </div>
+    </motion.div>
   );
 };
 
