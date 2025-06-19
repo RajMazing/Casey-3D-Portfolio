@@ -14,6 +14,15 @@ export function DeveloperModel({ animationName = 'idle' }) {
   const animationFBX = useFBX(`/models/${animationName}.fbx`) // or useGLTF if using .glb
   animationFBX.animations[0].name = animationName // Rename for consistency
 
+    // ADD THIS CODE HERE - Clean up the animation tracks
+  useEffect(() => {
+    if (animationFBX.animations[0]) {
+      animationFBX.animations[0].tracks = animationFBX.animations[0].tracks.filter(track => 
+        !track.name.includes('Armature.quaternion')
+      );
+    }
+  }, [animationFBX, animationName]);
+
   const { actions } = useAnimations([animationFBX.animations[0]], group)
 
   useEffect(() => {
