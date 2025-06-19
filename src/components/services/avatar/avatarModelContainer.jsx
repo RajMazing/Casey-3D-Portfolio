@@ -21,11 +21,11 @@ const AvatarModelContainer = () => {
   return (
     <Canvas>
       <Suspense fallback="loading...">
-        <Stage environment="city" intensity={1.5}>
+        <Stage environment="city" intensity={6}>
           <DeveloperModel animationName={currentAnimation} />
         </Stage>
         <OrbitControls enableZoom={false} autoRotate />
-        <PerspectiveCamera position={[-1, 0, 1.0]} zoom={0.8} makeDefault />
+        <PerspectiveCamera position={[-5, 0, 1.0]} zoom={0.7} makeDefault />
       </Suspense>
     </Canvas>
   )
