@@ -4,6 +4,7 @@ import "./services.css"
 import ComputerModelContainer from "./computer/ComputerModelContainer"
 import AvatarModelContainer from "./avatar/avatarModelContainer"
 import ConsoleModelContainer from "./gaming/ConsoleModelContainer"
+import AnimeModelContainer from "./anime/AnimeModelContainer"
 
 
 const Services = () => {
@@ -14,6 +15,7 @@ const Services = () => {
         <ComputerModelContainer />
         <AvatarModelContainer />
         <ConsoleModelContainer />
+        <AnimeModelContainer />
 
 
       </div>
