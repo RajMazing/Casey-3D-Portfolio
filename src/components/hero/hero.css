@@ -19,7 +19,7 @@
 .hImg {
   position: absolute;
   top: 50%;
-  left: 51%; /* shifted slightly right */
+  left: 50%; /* shifted slightly right */
   transform: translate(-50%, -50%);
   max-width: 100%;
   width: fit-content;
@@ -29,9 +29,9 @@
   justify-content: center;
   pointer-events: none;
   z-index: 1;
-filter: drop-shadow(0 0 25px rgba(240, 179, 70, 0.3));
+/* filter: drop-shadow(0 0 25px rgba(240, 179, 70, 0.3)); */
   /* Glow removed */
-  animation: floatImage 6s ease-in-out infinite;
+  /* animation: floatImage 6s ease-in-out infinite; */
 }
 
 .hImg img {
@@ -39,9 +39,9 @@ filter: drop-shadow(0 0 25px rgba(240, 179, 70, 0.3));
   width: 200px;
   height: auto;
   object-fit: contain;
-  opacity: 0.8;
+  opacity: 0.9;
   background: transparent;
-  border-radius: 100px;
+  border-radius: 300px;
   transition: transform 0.4s ease;
 
   /* Ensure no shadow is applied */
@@ -65,7 +65,7 @@ filter: drop-shadow(0 0 25px rgba(240, 179, 70, 0.3));
 /* Extra large screens */
 @media (min-width: 1280px) {
   .hImg img {
-    width: 400px;
+    width: 650px;
   }
 }
 

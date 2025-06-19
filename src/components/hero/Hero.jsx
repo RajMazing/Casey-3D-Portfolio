@@ -277,8 +277,8 @@ const Hero = () => {
         </Canvas>
         <div className="hImg">
           <img
-            src="/IMG_2269-removebg-preview (1).png"
             // src="/IMG_2269-removebg-preview (1).png"
+            src="/AI_IMG_ME.png"
             alt=""
           />
         </div>
