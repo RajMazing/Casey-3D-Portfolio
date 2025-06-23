@@ -140,6 +140,13 @@
   border-radius: 100%;
 }
 
+@media (max-width: 768px) {
+  .awardList {
+    margin-top: 20px;
+  }
+}
+
+
 .scroll {
   margin-bottom: 50px;
   width: max-content;
@@ -319,6 +326,7 @@
     align-items: center;
     text-align: center;
     gap: 36px;
+    
   }
 
   .hTitle {
@@ -341,5 +349,65 @@
   .bubbleContainer,
   .certificate {
     display: none;
+  }
+}
+
+.hiddenText {
+  display: block;
+}
+
+.toggleTextButton {
+  display: none;
+  background-color: #F0B346;
+  color: #E3EAF2;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 12px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+  .hSection.left {
+    padding-top: 0;
+    margin-top: 20px;
+  }
+
+  .hTitle {
+    margin-top: 0;
+  }
+
+  .toggleTextButton {
+    margin-top: 4px;
+    padding-top: 20px;
+  }
+
+  .awardList {
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+}
+
+
+
+
+.toggleTextButton:hover {
+  background-color: #E8CD86;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hiddenText {
+    display: none;
+  }
+
+  .toggleTextButton {
+    display: inline-block;
   }
 }

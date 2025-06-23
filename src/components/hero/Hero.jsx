@@ -5,7 +5,7 @@ import rajLogo from "/Rajmazing-r-logo.svg";
 
 import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 
 const awardVariants = {
   initial: {
@@ -37,7 +37,26 @@ const followVariants = {
   },
 };
 
+const toggleButtonStyle = {
+  backgroundColor: "#F0B346",
+  color: "#161014",
+  padding: "10px 24px",
+  border: "none",
+  borderRadius: "24px",
+  fontWeight: "700",
+  cursor: "pointer",
+  fontSize: "14px",
+  letterSpacing: "1px",
+  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+  marginTop: "16px",
+  transition: "all 0.3s ease",
+};
+
+
+
 const Hero = () => {
+
+  const [showText, setShowText] = useState(false);
   return (
     <div className="hero">
       <div className="hSection left">
@@ -102,22 +121,6 @@ const Hero = () => {
   </motion.span>
 </motion.h1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {/* AWARDS */}
         <motion.div
           variants={awardVariants}
@@ -125,14 +128,56 @@ const Hero = () => {
           animate="animate"
           className="awards"
         >
-          <motion.h2 className="awardsTitle">
-            Creative at Heart, Precise in Practice
-          </motion.h2>
-          <motion.p className="awardsText">
-            A developer on a mission to bring your ideas to life. Whether it's a
-            web app, portfolio, or custom tool, I craft clean, modern solutions
-            that help you stand out. Let’s turn your vision into something real.
-          </motion.p>
+         <div className="awardsContainer">
+  <motion.h2 className={`awardsTitle ${showText ? "" : "hiddenText"}`}>
+    Creative at Heart, Precise in Practice
+  </motion.h2>
+  
+  <motion.p className={`awardsText ${showText ? "" : "hiddenText"}`}>
+    A developer on a mission to bring your ideas to life. Whether it's a web app,
+    portfolio, or custom tool, I craft clean, modern solutions that help you stand out.
+    Let’s turn your vision into something real.
+  </motion.p>
+
+ 
+
+
+
+<motion.button
+  whileHover={{
+    scale: 1.2,
+    backgroundColor: "#E8CD86",
+  }}
+  whileTap={{
+    scale: 0.9,
+  }}
+  style={{
+    width: "fit-content",
+    backgroundColor: "#F0B346",
+    color: "#161014",
+    padding: "10px 24px",
+    border: "none",
+    borderRadius: "24px",
+    fontWeight: "700",
+    cursor: "pointer",
+    fontSize: "14px",
+    letterSpacing: "1px",
+    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+    /* REMOVE marginTop */
+  }}
+  className="toggleTextButton"
+  onClick={() => setShowText(!showText)}
+>
+  {showText ? "Hide" : "Read More"}
+</motion.button>
+
+
+
+
+
+</div>
+
+
           <motion.div variants={awardVariants} className="awardList">
             <motion.img
               variants={awardVariants}
